@@ -1,4 +1,4 @@
-package com.example.superheroescomics
+package com.example.superheroescomics.data
 
 import android.util.Log
 import androidx.lifecycle.LiveData
