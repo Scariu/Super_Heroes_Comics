@@ -30,7 +30,7 @@ class DetailFragment : Fragment() {
     ): View? {
         binding = FragmentDetailBinding.inflate(layoutInflater)
         initComponents()
-        initListeners()
+        initMailButton()
         return binding.root
     }
 
@@ -44,7 +44,7 @@ class DetailFragment : Fragment() {
                         placeholder(R.drawable.loading)
                         .error(R.drawable.image_not_available)
                     }
-                    binding.tvNameDetail.text = it.name
+                    binding.tvNameDetail.text = it.name.uppercase()
                     binding.tvOriginDetail.text = it.origin
                     binding.tvYearDetail.text = it.year.toString()
                     binding.tvSuperPowerDetail.text = it.superPower
@@ -59,7 +59,7 @@ class DetailFragment : Fragment() {
             }
     }
 
-    private fun initListeners() {
+    private fun initMailButton() {
         viewModel.superHeroDetailLiveData(superHeroId.toString().toInt())
             .observe(viewLifecycleOwner) {
                 if (it != null) {
