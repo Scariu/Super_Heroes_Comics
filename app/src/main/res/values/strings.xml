@@ -9,4 +9,12 @@
     </string>
     <string name="addressee_msn">Comicconchile@hotmail.com</string>
     <string name="subject_msn">Votación %1$s.</string>
+    <string name="title">Super Hero Comics</string>
+    <string name="floating_button">Boton para enviar mail</string>
+    <string name="name">Name</string>
+    <string name="translate">Translate</string>
+    <string name="color">Color</string>
+    <string name="year">Year</string>
+    <string name="super_power">Super Power</string>
+    <string name="origin">Origin</string>
 </resources>
