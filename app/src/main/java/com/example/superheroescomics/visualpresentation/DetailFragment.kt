@@ -1,10 +1,12 @@
 package com.example.superheroescomics.visualpresentation
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import coil.load
 import com.example.superheroescomics.R
@@ -28,6 +30,7 @@ class DetailFragment : Fragment() {
     ): View? {
         binding = FragmentDetailBinding.inflate(layoutInflater)
         initComponents()
+        initListeners()
         return binding.root
     }
 
@@ -48,6 +51,26 @@ class DetailFragment : Fragment() {
                     } else {
 
                         binding.tvTranslateDetail.text = getString(R.string.translate_true)
+                    }
+                }
+            }
+    }
+
+    private fun initListeners() {
+        viewModel.superHeroDetailLiveData(superHeroId.toString().toInt())
+            .observe(viewLifecycleOwner) {
+                if (it != null) {
+                    val asunto = getString(R.string.subject_msn, it.name)
+                    val message = getString(R.string.body_msn, it.name)
+                    val mail = getString(R.string.addressee_msn)
+
+                    binding.floatingActionButtonMail.setOnClickListener {
+                        val intentMail = Intent(Intent.ACTION_SEND, Uri.parse(mail))
+                        intentMail.type = "text/plain"
+                        intentMail.putExtra(Intent.EXTRA_EMAIL, arrayOf(mail))
+                        intentMail.putExtra(Intent.EXTRA_SUBJECT, asunto)
+                        intentMail.putExtra(Intent.EXTRA_TEXT, message)
+                        startActivity(Intent.createChooser(intentMail, "Send Mail"))
                     }
                 }
             }
