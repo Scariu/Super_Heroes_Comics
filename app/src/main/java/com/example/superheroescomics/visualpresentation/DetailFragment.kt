@@ -40,7 +40,10 @@ class DetailFragment : Fragment() {
         viewModel.superHeroDetailLiveData(superHeroId.toString().toInt())
             .observe(viewLifecycleOwner) {
                 if (it != null) {
-                    binding.imageViewImageDetail.load(it.imageUrl)
+                    binding.imageViewImageDetail.load(it.imageUrl){
+                        placeholder(R.drawable.loading)
+                        .error(R.drawable.image_not_available)
+                    }
                     binding.tvNameDetail.text = it.name
                     binding.tvOriginDetail.text = it.origin
                     binding.tvYearDetail.text = it.year.toString()

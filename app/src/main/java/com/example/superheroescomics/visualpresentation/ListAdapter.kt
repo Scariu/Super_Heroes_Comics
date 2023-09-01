@@ -11,7 +11,7 @@ import com.example.superheroescomics.data.local.list.SuperHeroEntity
 import com.example.superheroescomics.databinding.ItemListBinding
 
 class ListAdapter : RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
-    lateinit var itemBinding: ItemListBinding
+    private lateinit var itemBinding: ItemListBinding
     private val listOfSuperHeroes = mutableListOf<SuperHeroEntity>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListAdapter.ListViewHolder {
@@ -37,7 +37,10 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
     class ListViewHolder(private val itemBinding: ItemListBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
         fun bind(superHero: SuperHeroEntity) {
-            itemBinding.imageViewItem.load(superHero.imageUrl)
+            itemBinding.imageViewItem.load(superHero.imageUrl){
+                placeholder(R.drawable.loading_white)
+               .error(R.drawable.image_not_available_white)
+            }
             itemBinding.tvNameItem.text = superHero.name
             itemBinding.cvItemList.setOnClickListener{
                 val bundle = Bundle()
