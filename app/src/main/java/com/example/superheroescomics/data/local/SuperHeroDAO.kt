@@ -5,7 +5,8 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.superheroescomics.data.remote.SuperHeroDetail
+import com.example.superheroescomics.data.local.detail.SuperHeroDetailEntity
+import com.example.superheroescomics.data.local.list.SuperHeroEntity
 
 @Dao
 interface SuperHeroDAO {

@@ -3,8 +3,8 @@ package com.example.superheroescomics.data
 import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.superheroescomics.data.local.SuperHeroDAO
-import com.example.superheroescomics.data.local.SuperHeroDetailEntity
-import com.example.superheroescomics.data.local.SuperHeroEntity
+import com.example.superheroescomics.data.local.detail.SuperHeroDetailEntity
+import com.example.superheroescomics.data.local.list.SuperHeroEntity
 import com.example.superheroescomics.data.remote.SuperHeroAPI
 
 class Repository(private val superHeroAPI: SuperHeroAPI, private val superHeroDAO: SuperHeroDAO) {

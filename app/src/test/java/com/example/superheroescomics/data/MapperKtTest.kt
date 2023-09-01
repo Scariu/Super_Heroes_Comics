@@ -1,7 +1,7 @@
 package com.example.superheroescomics.data
 
-import com.example.superheroescomics.data.remote.SuperHero
-import com.example.superheroescomics.data.remote.SuperHeroDetail
+import com.example.superheroescomics.data.remote.list.SuperHero
+import com.example.superheroescomics.data.remote.detail.SuperHeroDetail
 import org.junit.Assert.*
 
 import org.junit.Test

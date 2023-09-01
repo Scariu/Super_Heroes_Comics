@@ -1,4 +1,4 @@
-package com.example.superheroescomics.data.remote
+package com.example.superheroescomics.data.remote.detail
 
 import com.google.gson.annotations.SerializedName
 

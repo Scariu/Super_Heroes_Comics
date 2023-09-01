@@ -1,4 +1,4 @@
-package com.example.superheroescomics.data.local
+package com.example.superheroescomics.data.local.list
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
