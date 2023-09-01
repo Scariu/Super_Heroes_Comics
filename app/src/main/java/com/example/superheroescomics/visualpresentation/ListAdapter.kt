@@ -41,7 +41,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
                 placeholder(R.drawable.loading_white)
                .error(R.drawable.image_not_available_white)
             }
-            itemBinding.tvNameItem.text = superHero.name
+            itemBinding.tvNameItem.text = superHero.name.uppercase()
             itemBinding.cvItemList.setOnClickListener{
                 val bundle = Bundle()
                 bundle.putString("id", superHero.id.toString())
